@@ -1,7 +1,7 @@
 // src/pages/Profile.jsx
 import React, { useEffect, useState } from 'react';
 import HeaderNavbar from '../components/HeaderNavbar';
-import { fetchProfile } from '../api/api';
+import { fetchProfile } from '../api/authApi';
 import Footer from '../components/Footer';
 const Profile = () => {
   const [user, setUser] = useState(null);

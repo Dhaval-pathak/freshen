@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchProfile } from '../api/api';
+import { fetchProfile } from '../api/authApi';
 const HeaderNavbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
@@ -11,14 +11,15 @@ const HeaderNavbar = () => {
     const loadProfile = async () => {
       const token = localStorage.getItem('token');
       if (!token) {
-        alert('No token found. Please log in.');
+        navigate('/login');
         return;
       }
       try {
         const data = await fetchProfile(token);
+        console.log(token)
         setUser(data.user.email);
       } catch (error) {
-        alert('Failed to load profile: ' + error.response?.data.message);
+        localStorage.removeItem('token');
       }
     };
     loadProfile();

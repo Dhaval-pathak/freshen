@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AddProduct from './AddProduct';
-import AddCategory from './AddCategory';
+import AddCategory from './ProductCategoryPage';
 import InventoryDashboard from './InventoryDashboard';
 import HeaderNavbar from '../../components/HeaderNavbar';
 const Inventory = () => {

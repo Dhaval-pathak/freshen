@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthForm from '../components/AuthForm';
-import { registerUser, loginUser } from '../api/api';
+import { registerUser, loginUser } from '../api/authApi';
 
 const Register = () => {
   const [email, setEmail] = useState('');
